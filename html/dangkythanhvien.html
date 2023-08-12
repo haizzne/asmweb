@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/image/3.jpg'); /* Thay đổi đường dẫn đến hình ảnh của bạn */
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h2 {
+            text-align: center;
+            color: blue;
+        }
+      
+        .login-container {
+          background-color: rgba(255, 255, 255, 0.1);
+          border-radius: 5px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          padding: 20px;
+          width: 450px;
+        }
+      
+        .login-container h1 {
+          margin-bottom: 20px;
+        }
+      
+        .login-input {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+          box-sizing: border-box;
+        }
+      
+        .login-button {
+          width: 100%;
+          padding: 10px;
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            outline: none;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+
+/* Trạng thái checked (được chọn) */
+        input[type="checkbox"]:checked {
+            background-color: green;
+            color: #fff;
+        }
+        .checkbox {
+            margin-top: -5%;
+        }
+
+        .ghi-chu {
+            padding-bottom: 120px;
+            width: 400px;
+        }
+      </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>ĐĂNG KÝ THÀNH VIÊN</h2>
+        <form>
+            <input type="text" class="login-input" placeholder="Mã sinh viên" required>
+            <input type="text" class="login-input" placeholder="Họ và tên" required>
+            <input type="text" class="login-input" placeholder="Email" required>
+            <h4>Giới tính</h4>
+            <div class="checkbox">
+                <label for="gender">
+                    <input type="checkbox" id="male" name="gender" value="male">Nam
+                </label>
+                <label for="gender">
+                    <input type="checkbox" id="female" name="gender" value="female">Nữ
+                </label>
+            </div>
+            <h4>Sở thích</h4>
+            <div class="checkbox">
+                <label for="hobby">
+                    <input type="checkbox" id="docsach" name="hobby" value="docsach">Đọc sách
+                </label>
+                <label for="hobby">
+                    <input type="checkbox" id="dulich" name="hobby" value="dulich">Du lịch
+                </label>
+                <label for="hobby">
+                    <input type="checkbox" id="amnhac" name="hobby" value="amnhac">Âm nhạc
+                </label>
+                <label for="hobby">
+                    <input type="checkbox" id="amthuc" name="hobby" value="amthuc">Ẩm thực
+                </label>
+                <label for="hobby">
+                    <input type="checkbox" id="khac" name="hobby" value="khac">Khác
+                </label>
+            </div>
+            <br>
+            <div>
+                <label for="nationality"><b>Quốc tịch:</b></label>
+                <select id="nationality" class="select-list" name="nationality">
+                    <option value="vn">Việt Nam</option>
+                    <option value="us">United States</option>
+                    <option value="ca">Canada</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="au">Australia</option>
+                    <option value="jp">Japan</option>
+                </select>
+            </div>
+            <br>
+            <h4>Ghi chú</h4>
+            <input type="text" class="ghi-chu" placeholder="Ghi chú"><br><br>
+          <button type="submit" class="login-button">Login</button>
+        </form>
+    </div>
+    <script>
+        const maleCheckbox = document.getElementById('male');
+        const femaleCheckbox = document.getElementById('female');
+
+        maleCheckbox.addEventListener('change', () => {
+            if (maleCheckbox.checked) {
+                femaleCheckbox.checked = false;
+            }
+        });
+
+        femaleCheckbox.addEventListener('change', () => {
+            if (femaleCheckbox.checked) {
+                maleCheckbox.checked = false;
+          }
+        });
+    </script>
+</body>
+</html>
